@@ -1,5 +1,5 @@
-The SO compiler
-===============
+The Small Oberon (SO) compiler
+==============================
 
 This is an implementation of the Oberon-0 compiler as defined in Compiler Contruction by Niklaus Wirth, 2005.
 
