@@ -1,0 +1,16 @@
+project SOC is
+   for Source_Dirs use ("src");
+   for Object_Dir use ".obj";
+   for Exec_Dir use ".";
+   for Main use ("soc.adb");
+
+  package Compiler is
+     for Default_Switches ("Ada") use ("-O0", "-g", "-ffunction-sections", "-fdata-sections");
+  end Compiler;
+
+  package Builder is
+     for Default_Switches ("Ada") use ("-gnat2012", "-gnata");
+
+     -- for Executable ("soc.adb") use "soc";
+  end Builder;
+end SOC;
