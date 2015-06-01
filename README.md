@@ -10,6 +10,17 @@ Features
 
 None, yet.
 
+Aims
+====
+
+I want to implement the following features:
+
+* Code generation
+  + Z80
+  + MIPS
+  + JVM
+* LLVM integration
+
 Licence
 =======
 
