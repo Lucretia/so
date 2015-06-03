@@ -57,8 +57,8 @@ package Oberon.Scanner is
                          T_Begin,
                          T_Module);
 
-   type Lines   is range 0 .. Positive'Last;
-   type Columns is range 0 .. Positive'Last;
+   type Lines   is range 1 .. Positive'Last;
+   type Columns is range 1 .. Positive'Last;
 
    --  The Tokens type contains other information about the token, the text value and where in the source file
    --  it is located.
