@@ -5,7 +5,7 @@
 --  This is the driver of the compiler.
 with Ada.Command_Line; use Ada.Command_Line;
 with Ada.Text_IO; use Ada.Text_IO;
-with Oberon.Files;
+with Oberon.Scanner;
 
 procedure SOC is
 begin
@@ -17,11 +17,13 @@ begin
       Put_Line ("  soc <filename> (without .obn extension)");
    else
       declare
-         Src : Oberon.Files.File := Oberon.Files.Open (Argument (1));
+         Src : Oberon.Scanner.Scanner := Oberon.Scanner.Makers.Create (Argument (1));
       begin
-         for Index in Src'Range loop
-            Put (Src (Index));
-         end loop;
+         Oberon.Scanner.Scan (Self => Src);
+
+         --         for Index in Src'Range loop
+         --            Put (Src (Index));
+         --         end loop;
       end;
    end if;
 end SOC;
