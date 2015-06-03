@@ -61,6 +61,9 @@ package body Oberon.Scanner is
       procedure Push_Back is
       begin
          Current_Character := Current_Character - 1;
+         Current_Column    := Current_Column - 1;
+         --  Make sure the column is also updated, otherwise we get out of
+         --  sync with the Current_Character value.
       end Push_Back;
    begin
       while Current_Character /= Self.Source'Last loop
