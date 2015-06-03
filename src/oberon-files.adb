@@ -30,5 +30,7 @@ package body Oberon.Files is
    exception
       when others =>
          Put_Line ("Error, reading source file, " & Actual_Name);
+
+         raise;
    end Open;
 end Oberon.Files;
