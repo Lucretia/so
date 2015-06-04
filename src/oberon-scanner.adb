@@ -346,7 +346,7 @@ package body Oberon.Scanner is
                      --  We have an unknown symbol in the source file.
                      Current_Token := (Token        => T_Unknown,
                                        Lexeme_Start => Current_Character,
-                                       Lexeme_End   => Current_Character + 1,
+                                       Lexeme_End   => Current_Character,
                                        Line         => Current_Line,
                                        Column       => Current_Column);
 
