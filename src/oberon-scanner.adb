@@ -1,7 +1,6 @@
 ------------------------------------------------------------------------------------------------------------------------
 --  See COPYING for licence information.
 ------------------------------------------------------------------------------------------------------------------------
-with Ada.Characters.Handling;
 with Ada.Characters.Latin_1;
 with Ada.Unchecked_Deallocation;
 with Ada.Text_IO; use Ada.Text_IO;
@@ -14,7 +13,7 @@ package body Oberon.Scanner is
       end if;
 
       --  Make sure we always return a lower case string except for EOF.
-      return Ada.Characters.Handling.To_Lower (From.Source (Self.Lexeme_Start .. Self.Lexeme_End));
+      return From.Source (Self.Lexeme_Start .. Self.Lexeme_End);
    end Lexeme;
 
    function Line (Self : in Tokens) return Lines is
@@ -493,22 +492,22 @@ package body Oberon.Scanner is
    end Finalize;
 begin
    --  Create a map of keyword strings and Token_Values.
-   Keywords.Include (Key => "div",       New_Item => T_Divide);
-   Keywords.Include (Key => "mod",       New_Item => T_Modulus);
-   Keywords.Include (Key => "or",        New_Item => T_Logic_Or);
-   Keywords.Include (Key => "of",        New_Item => T_Of);
-   Keywords.Include (Key => "then",      New_Item => T_Then);
-   Keywords.Include (Key => "do",        New_Item => T_Do);
-   Keywords.Include (Key => "end",       New_Item => T_End);
-   Keywords.Include (Key => "else",      New_Item => T_Else);
-   Keywords.Include (Key => "elsif",     New_Item => T_Elsif);
-   Keywords.Include (Key => "while",     New_Item => T_While);
-   Keywords.Include (Key => "array",     New_Item => T_Array);
-   Keywords.Include (Key => "record",    New_Item => T_Record);
-   Keywords.Include (Key => "const",     New_Item => T_Const);
-   Keywords.Include (Key => "type",      New_Item => T_Type);
-   Keywords.Include (Key => "var",       New_Item => T_Var);
-   Keywords.Include (Key => "procedure", New_Item => T_Procedure);
-   Keywords.Include (Key => "begin",     New_Item => T_Begin);
-   Keywords.Include (Key => "module",    New_Item => T_Module);
+   Keywords.Include (Key => "DIV",       New_Item => T_Divide);
+   Keywords.Include (Key => "MOD",       New_Item => T_Modulus);
+   Keywords.Include (Key => "OR",        New_Item => T_Logic_Or);
+   Keywords.Include (Key => "OF",        New_Item => T_Of);
+   Keywords.Include (Key => "THEN",      New_Item => T_Then);
+   Keywords.Include (Key => "DO",        New_Item => T_Do);
+   Keywords.Include (Key => "END",       New_Item => T_End);
+   Keywords.Include (Key => "ELSE",      New_Item => T_Else);
+   Keywords.Include (Key => "ELSIF",     New_Item => T_Elsif);
+   Keywords.Include (Key => "WHILE",     New_Item => T_While);
+   Keywords.Include (Key => "ARRAY",     New_Item => T_Array);
+   Keywords.Include (Key => "RECORD",    New_Item => T_Record);
+   Keywords.Include (Key => "CONST",     New_Item => T_Const);
+   Keywords.Include (Key => "TYPE",      New_Item => T_Type);
+   Keywords.Include (Key => "VAR",       New_Item => T_Var);
+   Keywords.Include (Key => "PROCEDURE", New_Item => T_Procedure);
+   Keywords.Include (Key => "BEGIN",     New_Item => T_Begin);
+   Keywords.Include (Key => "MODULE",    New_Item => T_Module);
 end Oberon.Scanner;
